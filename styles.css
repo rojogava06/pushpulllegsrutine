@@ -1,0 +1,1091 @@
+/* ==========================================================================
+   Rutina Ideal PPL - Premium Dark Fitness App CSS Design System
+   ========================================================================== */
+
+/* 1. Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* 2. Color System & Variables */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --text-primary: #ffffff;
+  --text-secondary: #8b8ba3;
+  --text-muted: #5a5a72;
+
+  /* Push Day (Orange) */
+  --push-primary: #ff6b35;
+  --push-secondary: #ff4757;
+  --push-glow: rgba(255, 107, 53, 0.3);
+
+  /* Pull Day (Cyan) */
+  --pull-primary: #00d2ff;
+  --pull-secondary: #3a7bd5;
+  --pull-glow: rgba(0, 210, 255, 0.3);
+
+  /* Legs Day (Green) */
+  --legs-primary: #00b894;
+  --legs-secondary: #55efc4;
+  --legs-glow: rgba(0, 184, 148, 0.3);
+
+  /* Rest Day (Purple) */
+  --rest-primary: #a29bfe;
+
+  /* Borders & UI Elements */
+  --border-color: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--push-primary);
+  color: #ffffff;
+}
+
+/* 4. Container Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 5. Hero Section */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--push-primary) 0%, transparent 70%);
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(50px);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--pull-primary) 0%, transparent 70%);
+  opacity: 0.08;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(50px);
+}
+
+.hero-badge {
+  display: inline-flex;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-title .gradient-text {
+  background: linear-gradient(90deg, var(--push-primary), var(--pull-primary), var(--legs-primary), var(--push-primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradientShift 4s ease infinite;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  font-weight: 300;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.stat-number.push-color {
+  color: var(--push-primary);
+}
+
+.stat-number.pull-color {
+  color: var(--pull-primary);
+}
+
+.stat-number.legs-color {
+  color: var(--legs-primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 6. Today Section */
+.today-section {
+  margin-bottom: 60px;
+}
+
+.today-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-md);
+}
+
+.today-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.today-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.week-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.week-btn {
+  padding: 10px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.week-btn:hover {
+  border-color: var(--text-secondary);
+}
+
+.week-btn.active {
+  background: var(--push-primary);
+  border-color: var(--push-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 15px var(--push-glow);
+}
+
+.today-result {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.4s ease;
+  margin-top: 16px;
+}
+
+.today-result.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.today-result.push {
+  background: rgba(255, 107, 53, 0.1);
+  border-color: rgba(255, 107, 53, 0.3);
+  color: var(--push-primary);
+}
+
+.today-result.pull {
+  background: rgba(0, 210, 255, 0.1);
+  border-color: rgba(0, 210, 255, 0.3);
+  color: var(--pull-primary);
+}
+
+.today-result.legs {
+  background: rgba(0, 184, 148, 0.1);
+  border-color: rgba(0, 184, 148, 0.3);
+  color: var(--legs-primary);
+}
+
+.today-result.rest {
+  background: rgba(162, 155, 254, 0.1);
+  border-color: rgba(162, 155, 254, 0.3);
+  color: var(--rest-primary);
+}
+
+.today-result .go-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  color: #ffffff;
+}
+
+.today-result.push .go-btn {
+  background: var(--push-primary);
+}
+
+.today-result.pull .go-btn {
+  background: var(--pull-primary);
+}
+
+.today-result.legs .go-btn {
+  background: var(--legs-primary);
+}
+
+/* 7. Calendar Section */
+.calendar-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
+
+.calendar-grid {
+  overflow-x: auto;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.calendar-table th {
+  padding: 16px 12px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.calendar-table th:first-child {
+  text-align: left;
+  padding-left: 24px;
+}
+
+.calendar-table td {
+  padding: 14px 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.calendar-table tr:last-child td {
+  border-bottom: none;
+}
+
+.calendar-table td:first-child {
+  text-align: left;
+  padding-left: 24px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.day-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.day-badge.push {
+  background: rgba(255, 107, 53, 0.15);
+  color: var(--push-primary);
+}
+
+.day-badge.push:hover {
+  background: rgba(255, 107, 53, 0.3);
+  box-shadow: 0 0 15px var(--push-glow);
+}
+
+.day-badge.pull {
+  background: rgba(0, 210, 255, 0.15);
+  color: var(--pull-primary);
+}
+
+.day-badge.pull:hover {
+  background: rgba(0, 210, 255, 0.3);
+  box-shadow: 0 0 15px var(--pull-glow);
+}
+
+.day-badge.legs {
+  background: rgba(0, 184, 148, 0.15);
+  color: var(--legs-primary);
+}
+
+.day-badge.legs:hover {
+  background: rgba(0, 184, 148, 0.3);
+  box-shadow: 0 0 15px var(--legs-glow);
+}
+
+.day-badge.rest {
+  background: rgba(162, 155, 254, 0.1);
+  color: var(--rest-primary);
+  cursor: default;
+}
+
+/* 8. Tab Navigation */
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  padding: 14px 36px;
+  border-radius: 50px;
+  border: 2px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-btn:hover {
+  transform: translateY(-2px);
+}
+
+.tab-btn.push-tab:hover {
+  border-color: var(--push-primary);
+  color: var(--push-primary);
+}
+
+.tab-btn.pull-tab:hover {
+  border-color: var(--pull-primary);
+  color: var(--pull-primary);
+}
+
+.tab-btn.legs-tab:hover {
+  border-color: var(--legs-primary);
+  color: var(--legs-primary);
+}
+
+.tab-btn.active.push-tab {
+  background: var(--push-primary);
+  border-color: var(--push-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 20px var(--push-glow);
+}
+
+.tab-btn.active.pull-tab {
+  background: var(--pull-primary);
+  border-color: var(--pull-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 20px var(--pull-glow);
+}
+
+.tab-btn.active.legs-tab {
+  background: var(--legs-primary);
+  border-color: var(--legs-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 20px var(--legs-glow);
+}
+
+/* 9. Progress Bar */
+.progress-section {
+  margin-bottom: 40px;
+}
+
+.progress-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progress-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.progress-count {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 50px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.progress-fill.push {
+  background: linear-gradient(90deg, var(--push-primary), var(--push-secondary));
+}
+
+.progress-fill.pull {
+  background: linear-gradient(90deg, var(--pull-primary), var(--pull-secondary));
+}
+
+.progress-fill.legs {
+  background: linear-gradient(90deg, var(--legs-primary), var(--legs-secondary));
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-secondary);
+}
+
+/* 10. Exercise Section */
+.day-section {
+  display: none;
+}
+
+.day-section.active {
+  display: block;
+  animation: fadeInUp 0.4s ease;
+}
+
+.day-header {
+  margin-bottom: 32px;
+}
+
+.day-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.day-title.push-title {
+  color: var(--push-primary);
+}
+
+.day-title.pull-title {
+  color: var(--pull-primary);
+}
+
+.day-title.legs-title {
+  color: var(--legs-primary);
+}
+
+.day-description {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.muscles-overview {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.muscle-pill {
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 11. Exercise Card */
+.exercise-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.exercise-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.exercise-card.completed {
+  opacity: 0.7;
+}
+
+.exercise-card.completed .exercise-name {
+  text-decoration: line-through;
+}
+
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.video-container {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #080810;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  gap: 8px;
+}
+
+.no-video-placeholder .no-video-icon {
+  font-size: 2.5rem;
+  opacity: 0.5;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.video-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.play-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.play-icon:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+.exercise-details {
+  padding: 28px;
+}
+
+.exercise-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.exercise-number {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.08;
+  line-height: 1;
+  min-width: 50px;
+}
+
+.exercise-meta {
+  flex: 1;
+}
+
+.exercise-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.exercise-sets {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.exercise-sets.push-color {
+  color: var(--push-primary);
+}
+
+.exercise-sets.pull-color {
+  color: var(--pull-primary);
+}
+
+.exercise-sets.legs-color {
+  color: var(--legs-primary);
+}
+
+.exercise-muscles-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.muscle-tag {
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+}
+
+.tips-section {
+  margin-bottom: 16px;
+}
+
+.tips-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.tip-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tip-icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.tip-icon.push-color {
+  color: var(--push-primary);
+}
+
+.tip-icon.pull-color {
+  color: var(--pull-primary);
+}
+
+.tip-icon.legs-color {
+  color: var(--legs-primary);
+}
+
+.errors-section {
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(255, 71, 87, 0.05);
+  border-radius: var(--radius-md);
+  border-left: 3px solid rgba(255, 71, 87, 0.5);
+}
+
+.errors-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ff4757;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.error-item {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.error-item::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: #ff4757;
+  font-weight: bold;
+}
+
+.exercise-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 20px;
+}
+
+.complete-btn {
+  padding: 10px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.complete-btn:hover {
+  transform: translateY(-1px);
+}
+
+.complete-btn.push-btn:hover {
+  border-color: var(--push-primary);
+  color: var(--push-primary);
+}
+
+.complete-btn.pull-btn:hover {
+  border-color: var(--pull-primary);
+  color: var(--pull-primary);
+}
+
+.complete-btn.legs-btn:hover {
+  border-color: var(--legs-primary);
+  color: var(--legs-primary);
+}
+
+.complete-btn.completed {
+  border-color: var(--legs-primary);
+  color: var(--legs-primary);
+  background: rgba(0, 184, 148, 0.1);
+}
+
+/* 12. Footer */
+.footer {
+  margin-top: 80px;
+  padding: 40px 0 60px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.footer-credit {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  color: var(--pull-primary);
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: var(--pull-secondary);
+  text-decoration: underline;
+}
+
+.footer-love {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* 13. Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional Stagger for Exercise Cards (Up to 10 for safety) */
+.exercise-card:nth-child(1) { animation-delay: 0.1s; }
+.exercise-card:nth-child(2) { animation-delay: 0.2s; }
+.exercise-card:nth-child(3) { animation-delay: 0.3s; }
+.exercise-card:nth-child(4) { animation-delay: 0.4s; }
+.exercise-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* 14. Responsive Design */
+@media (max-width: 900px) {
+  .card-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .exercise-details {
+    padding: 20px;
+  }
+  
+  .calendar-table th,
+  .calendar-table td {
+    font-size: 0.8rem;
+    padding: 10px 8px;
+  }
+  
+  .calendar-table td:first-child,
+  .calendar-table th:first-child {
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .week-selector {
+    flex-direction: column;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .tab-nav {
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    padding: 8px 16px;
+  }
+  
+  .exercise-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .exercise-number {
+    font-size: 2rem;
+    min-width: auto;
+  }
+}

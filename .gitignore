@@ -1,0 +1,6 @@
+desktop.ini
+.DS_Store
+Thumbs.db
+*.tmp
+/scratch/
+/identificar_videos.html

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rutina PPL (Push, Pull, Legs) interactiva de Jesse James West. Guía completa con videos, recomendaciones y seguimiento de progreso para principiantes en el gym.">
+    <title>PPL Routine — Push Pull Legs | Jesse James West</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">🏋️ RUTINA BASADA EN CIENCIA</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">PUSH PULL LEGS</span>
+            </h1>
+            <p class="hero-subtitle">
+                Tu guía completa para la rutina PPL de Jesse James West. Diseñada para principiantes con videos demostrativos, recomendaciones de forma y seguimiento de progreso.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" style="color: var(--push-primary)">15</div>
+                    <div class="stat-label">Ejercicios</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="color: var(--pull-primary)">5</div>
+                    <div class="stat-label">Días / Semana</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" style="color: var(--legs-primary)">3</div>
+                    <div class="stat-label">Rotaciones</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- ===== ¿QUÉ TOCA HOY? ===== -->
+        <section class="today-section animate-on-scroll">
+            <div class="today-card">
+                <div class="today-header">
+                    <span class="icon">📅</span>
+                    <h2>¿Qué toca hoy?</h2>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.95rem;">
+                    Selecciona en qué semana de tu ciclo estás para saber qué rutina hacer hoy:
+                </p>
+                <div class="week-selector">
+                    <button class="week-btn" data-week="1">Semana 1</button>
+                    <button class="week-btn" data-week="2">Semana 2</button>
+                    <button class="week-btn" data-week="3">Semana 3</button>
+                </div>
+                <div class="today-result" id="today-result"></div>
+            </div>
+        </section>
+
+        <!-- ===== CALENDARIO ROTATIVO ===== -->
+        <section class="calendar-section animate-on-scroll">
+            <h2 class="section-title">📋 Esquema Rotativo de 5 Días</h2>
+            <p class="section-subtitle">Lunes a Viernes con descanso en fin de semana. Haz clic en cualquier día para ir a esa rutina.</p>
+            <div class="calendar-grid">
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sáb / Dom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Semana 1</td>
+                            <td><span class="day-badge push" data-day="push">Push</span></td>
+                            <td><span class="day-badge pull" data-day="pull">Pull</span></td>
+                            <td><span class="day-badge legs" data-day="legs">Legs</span></td>
+                            <td><span class="day-badge push" data-day="push">Push</span></td>
+                            <td><span class="day-badge pull" data-day="pull">Pull</span></td>
+                            <td><span class="day-badge rest" data-day="rest">Descanso</span></td>
+                        </tr>
+                        <tr>
+                            <td>Semana 2</td>
+                            <td><span class="day-badge legs" data-day="legs">Legs</span></td>
+                            <td><span class="day-badge push" data-day="push">Push</span></td>
+                            <td><span class="day-badge pull" data-day="pull">Pull</span></td>
+                            <td><span class="day-badge legs" data-day="legs">Legs</span></td>
+                            <td><span class="day-badge push" data-day="push">Push</span></td>
+                            <td><span class="day-badge rest" data-day="rest">Descanso</span></td>
+                        </tr>
+                        <tr>
+                            <td>Semana 3</td>
+                            <td><span class="day-badge pull" data-day="pull">Pull</span></td>
+                            <td><span class="day-badge legs" data-day="legs">Legs</span></td>
+                            <td><span class="day-badge push" data-day="push">Push</span></td>
+                            <td><span class="day-badge pull" data-day="pull">Pull</span></td>
+                            <td><span class="day-badge legs" data-day="legs">Legs</span></td>
+                            <td><span class="day-badge rest" data-day="rest">Descanso</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== TAB NAVIGATION ===== -->
+        <nav class="tab-nav" id="exercises-section">
+            <button class="tab-btn push-tab active" id="tab-push" data-day="push">
+                <span class="tab-icon">🔥</span> Push Day
+            </button>
+            <button class="tab-btn pull-tab" id="tab-pull" data-day="pull">
+                <span class="tab-icon">💎</span> Pull Day
+            </button>
+            <button class="tab-btn legs-tab" id="tab-legs" data-day="legs">
+                <span class="tab-icon">🦵</span> Leg Day
+            </button>
+        </nav>
+
+        <!-- ===== PROGRESS BAR ===== -->
+        <section class="progress-section">
+            <div class="progress-card">
+                <div class="progress-header">
+                    <span class="progress-title" id="progress-title">Progreso Push Day</span>
+                    <span class="progress-count" id="progress-count">0 / 4 ejercicios completados</span>
+                    <button class="reset-btn" id="reset-btn" title="Reiniciar progreso">↺ Reiniciar</button>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill push" id="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ================ PUSH DAY ================= -->
+        <!-- ============================================ -->
+        <section class="day-section active" id="section-push">
+            <div class="day-header animate-on-scroll">
+                <h2 class="day-title push-title">🔥 Push Day</h2>
+                <p class="day-description">Día enfocado en movimientos de empuje. Trabajarás pecho, hombros y tríceps con ejercicios compuestos e isolados.</p>
+                <div class="muscles-overview">
+                    <span class="muscle-pill">Pecho</span>
+                    <span class="muscle-pill">Hombros</span>
+                    <span class="muscle-pill">Tríceps</span>
+                </div>
+            </div>
+
+            <!-- Push Exercise 1: Bench Press -->
+            <div class="exercise-card animate-on-scroll" id="card-push-1">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 8.04.21 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">01</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Bench Press</h3>
+                                <span class="exercise-sets push-color">3 × 4-8 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Pecho</span>
+                            <span class="muscle-tag">Tríceps</span>
+                            <span class="muscle-tag">Deltoides anterior</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Acuéstate en el banco con los ojos debajo de la barra. Agarra la barra un poco más ancho que tus hombros.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Retrae las escápulas (junta los omóplatos) y arquea ligeramente la espalda baja para proteger los hombros.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Baja la barra controladamente hasta tocar el pecho (línea de los pezones) y empuja explosivamente hacia arriba.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Mantén los pies firmes en el suelo y aprieta los glúteos para mayor estabilidad. Este es tu ejercicio principal de fuerza: usa peso pesado con buena forma.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Rebotar la barra en el pecho — baja con control</div>
+                            <div class="error-item">Levantar los pies del suelo — mantén estabilidad</div>
+                            <div class="error-item">No retraer las escápulas — causa dolor de hombros</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn push-btn" data-exercise="push-1">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Push Exercise 2: Cable Fly -->
+            <div class="exercise-card animate-on-scroll" id="card-push-2">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 8.09.45 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">02</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Cable Fly</h3>
+                                <span class="exercise-sets push-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Pecho (estiramiento)</span>
+                            <span class="muscle-tag">Deltoides anterior</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Coloca las poleas a la altura de tus hombros o ligeramente por encima. Da un paso al frente para crear tensión constante.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Mantén una ligera flexión en los codos durante todo el movimiento — no cambies el ángulo de los brazos.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Piensa en "abrazar un árbol grande". Aprieta fuerte el pecho cuando juntas las manos al frente.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Controla la fase excéntrica (cuando abres los brazos) — siente el estiramiento profundo en el pecho.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Usar demasiado peso y convertirlo en un press — reduce el peso</div>
+                            <div class="error-item">Extender los codos completamente — mantén flexión ligera</div>
+                            <div class="error-item">Mover el torso para generar impulso — mantente estable</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn push-btn" data-exercise="push-2">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Push Exercise 3: Incline Laterals -->
+            <div class="exercise-card animate-on-scroll" id="card-push-3">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 8.15.44 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">03</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Incline Laterals</h3>
+                                <span class="exercise-sets push-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Deltoides lateral</span>
+                            <span class="muscle-tag">Hombros</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Recuéstate de lado en un banco inclinado (aprox. 30-45°). Esto aumenta el rango de movimiento y la tensión en el deltoides lateral.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Sube la mancuerna lateralmente con el brazo casi extendido. Imagina que viertes agua de una jarra al subir.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>No subas más allá de la altura del hombro. Mantén la tensión y baja controladamente.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Usa peso ligero — este ejercicio es sobre la conexión mente-músculo, no sobre peso pesado.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Usar impulso corporal para subir el peso — controla cada rep</div>
+                            <div class="error-item">Subir el peso demasiado alto — mantén al nivel del hombro</div>
+                            <div class="error-item">Usar peso excesivo — prioriza sentir el músculo</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn push-btn" data-exercise="push-3">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Push Exercise 4: Triceps Extension -->
+            <div class="exercise-card animate-on-scroll" id="card-push-4">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 8.20.11 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">04</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Triceps Extension</h3>
+                                <span class="exercise-sets push-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Tríceps (cabeza larga)</span>
+                            <span class="muscle-tag">Tríceps (cabeza lateral)</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Usa la polea con la cuerda o barra. Mantén los codos pegados al cuerpo y fijos en su posición — solo mueve los antebrazos.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Extiende completamente los brazos en la parte baja del movimiento y aprieta los tríceps fuerte por un segundo.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Si usas cuerda, separa las manos al final del movimiento para máxima contracción. Regresa el peso controladamente.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon push-color">→</span>
+                                <span>Inclínate ligeramente hacia adelante para mayor rango de movimiento. No dejes que los codos se abran.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Mover los codos hacia adelante y atrás — mantenlos fijos</div>
+                            <div class="error-item">Usar el peso del cuerpo para empujar — aísla el tríceps</div>
+                            <div class="error-item">No extender completamente — busca la contracción total</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn push-btn" data-exercise="push-4">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ================ PULL DAY ================= -->
+        <!-- ============================================ -->
+        <section class="day-section" id="section-pull">
+            <div class="day-header animate-on-scroll">
+                <h2 class="day-title pull-title">💎 Pull Day</h2>
+                <p class="day-description">Día enfocado en movimientos de jalón/tirón. Trabajarás toda la espalda (ancho y grosor) y bíceps.</p>
+                <div class="muscles-overview">
+                    <span class="muscle-pill">Dorsal</span>
+                    <span class="muscle-pill">Romboides</span>
+                    <span class="muscle-pill">Trapecio</span>
+                    <span class="muscle-pill">Bíceps</span>
+                </div>
+            </div>
+
+            <!-- Pull Exercise 1: Pulldown -->
+            <div class="exercise-card animate-on-scroll" id="card-pull-1">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 6.59.00 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">01</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Pulldown</h3>
+                                <span class="exercise-sets pull-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Dorsal ancho</span>
+                            <span class="muscle-tag">Bíceps</span>
+                            <span class="muscle-tag">Romboides</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Siéntate con los muslos bien fijos debajo del soporte. Agarra la barra un poco más ancho que los hombros con agarre prono (palmas hacia adelante).</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Inclínate ligeramente hacia atrás (~10-15°). Jala la barra hacia la parte superior del pecho, no detrás del cuello.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Piensa en jalar con los codos hacia abajo y atrás, no con las manos. Aprieta las escápulas al final del movimiento.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Controla la subida — no dejes que el peso jale tus brazos de golpe. Siente el estiramiento arriba.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Inclinarse demasiado hacia atrás — convierte el ejercicio en un row</div>
+                            <div class="error-item">Jalar detrás del cuello — riesgo de lesión de hombro</div>
+                            <div class="error-item">Usar impulso excesivo — reduce el peso y controla</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn pull-btn" data-exercise="pull-1">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pull Exercise 2: Chest Supported Row -->
+            <div class="exercise-card animate-on-scroll" id="card-pull-2">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.06.50 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">02</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Chest Supported Row</h3>
+                                <span class="exercise-sets pull-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Espalda media</span>
+                            <span class="muscle-tag">Romboides</span>
+                            <span class="muscle-tag">Trapecio medio</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Acuéstate boca abajo sobre un banco inclinado (30-45°). Esto elimina el impulso y aísla completamente la espalda.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Toma las mancuernas con agarre neutro (palmas viéndose). Jala los codos hacia atrás apretando los omóplatos.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Sostén la contracción arriba por 1-2 segundos. Este ejercicio es excelente para desarrollar grosor en la espalda.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Ideal para principiantes porque el banco te da soporte y evita que hagas trampa con el cuerpo.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Levantar el pecho del banco — mantén contacto completo</div>
+                            <div class="error-item">Jalar solo con los brazos — inicia el movimiento con la espalda</div>
+                            <div class="error-item">No apretar arriba — pausa y aprieta los omóplatos</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn pull-btn" data-exercise="pull-2">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pull Exercise 3: Pullaround -->
+            <div class="exercise-card animate-on-scroll" id="card-pull-3">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.11.36 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">03</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Pullaround</h3>
+                                <span class="exercise-sets pull-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Dorsal ancho</span>
+                            <span class="muscle-tag">Serrato anterior</span>
+                            <span class="muscle-tag">Pecho (secundario)</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Usa una polea o cable a una altura baja/media. El pullaround combina un pullover con un movimiento de arco.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Mantén los brazos casi rectos (ligera flexión en codos). Lleva el cable en un arco amplio desde arriba/atrás hacia tus caderas.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Concéntrate en sentir el dorsal ancho (el músculo grande de la espalda a los lados). Aprieta fuerte al final.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Este ejercicio es excelente para mejorar la conexión mente-músculo con el dorsal. Usa peso moderado.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Doblar demasiado los codos — mantén brazos casi extendidos</div>
+                            <div class="error-item">Usar impulso del cuerpo — movimiento controlado y lento</div>
+                            <div class="error-item">No sentir el dorsal — baja el peso y enfócate en la contracción</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn pull-btn" data-exercise="pull-3">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pull Exercise 4: Pendlay Row -->
+            <div class="exercise-card animate-on-scroll" id="card-pull-4">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.19.14 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">04</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Pendlay Row</h3>
+                                <span class="exercise-sets pull-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Espalda completa</span>
+                            <span class="muscle-tag">Trapecio</span>
+                            <span class="muscle-tag">Bíceps</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Coloca la barra en el suelo. Inclínate con el torso paralelo al piso (o casi paralelo). Espalda recta, core apretado.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>A diferencia del barbell row normal, en el Pendlay Row la barra descansa en el suelo entre cada rep. Esto elimina el impulso.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Jala explosivamente hacia tu abdomen bajo. Aprieta la espalda arriba y baja controladamente hasta el suelo.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Mantén la posición del torso constante — si tu torso se mueve mucho, el peso es demasiado pesado.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Redondear la espalda baja — PELIGRO, mantén espalda recta</div>
+                            <div class="error-item">Torso muy elevado — debe estar casi paralelo al suelo</div>
+                            <div class="error-item">No tocar el suelo entre reps — es la diferencia del Pendlay Row</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn pull-btn" data-exercise="pull-4">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pull Exercise 5: Cable Curl -->
+            <div class="exercise-card animate-on-scroll" id="card-pull-5">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.28.33 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">05</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Cable Curl</h3>
+                                <span class="exercise-sets pull-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Bíceps braquial</span>
+                            <span class="muscle-tag">Braquiorradial</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Coloca la polea en la posición más baja. Usa una barra recta o EZ. Párate derecho con los codos pegados a los costados.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>La ventaja del cable sobre las mancuernas es la tensión constante durante TODO el movimiento, incluso arriba.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>Sube el peso con un movimiento de curl controlado. Aprieta el bíceps fuerte arriba y baja lentamente (3 segundos).</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon pull-color">→</span>
+                                <span>No balancees el cuerpo. Si necesitas balancearte, el peso es demasiado pesado. Reduce y siente el bíceps trabajar.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Balancear el cuerpo para subir el peso — mantente rígido</div>
+                            <div class="error-item">Mover los codos hacia adelante — mantenlos pegados al cuerpo</div>
+                            <div class="error-item">Bajar el peso muy rápido — controla la negativa</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn pull-btn" data-exercise="pull-5">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ================ LEG DAY ================== -->
+        <!-- ============================================ -->
+        <section class="day-section" id="section-legs">
+            <div class="day-header animate-on-scroll">
+                <h2 class="day-title legs-title">🦵 Leg Day</h2>
+                <p class="day-description">El día más importante (¡no te lo saltes!). Trabajarás cuádriceps, isquiotibiales, glúteos y pantorrillas con una combinación de fuerza y volumen.</p>
+                <div class="muscles-overview">
+                    <span class="muscle-pill">Cuádriceps</span>
+                    <span class="muscle-pill">Isquiotibiales</span>
+                    <span class="muscle-pill">Glúteos</span>
+                    <span class="muscle-pill">Pantorrillas</span>
+                </div>
+            </div>
+
+            <!-- Leg Exercise 1: Squat -->
+            <div class="exercise-card animate-on-scroll" id="card-legs-1">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.34.24 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">01</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Squat</h3>
+                                <span class="exercise-sets legs-color">3 × 6 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Cuádriceps</span>
+                            <span class="muscle-tag">Glúteos</span>
+                            <span class="muscle-tag">Core</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Coloca la barra en la parte superior del trapecio (high bar) o un poco más abajo (low bar). Pies al ancho de hombros, puntas ligeramente hacia afuera.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Toma aire profundo, aprieta el core y baja como si fueras a sentarte en una silla. Las rodillas deben seguir la dirección de los pies.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Baja hasta que tus muslos estén paralelos al suelo (o más abajo si tu movilidad lo permite). Mantén el pecho arriba y la mirada al frente.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Empuja el suelo con los pies para subir. Este es un ejercicio de FUERZA: pocas reps con peso pesado. Si eres principiante, practica primero sin peso.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Rodillas colapsando hacia adentro — empújalas hacia afuera</div>
+                            <div class="error-item">Levantar los talones — mantén los pies completamente en el suelo</div>
+                            <div class="error-item">Inclinar el torso demasiado — pecho arriba, core apretado</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn legs-btn" data-exercise="legs-1">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leg Exercise 2: Good Morning -->
+            <div class="exercise-card animate-on-scroll" id="card-legs-2">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.41.36 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">02</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Good Morning</h3>
+                                <span class="exercise-sets legs-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Isquiotibiales</span>
+                            <span class="muscle-tag">Glúteos</span>
+                            <span class="muscle-tag">Espalda baja</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Coloca la barra sobre la espalda como en un squat. Pies al ancho de hombros. Ligera flexión en las rodillas.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Inclínate hacia adelante desde las caderas (hip hinge), no desde la cintura. Empuja las caderas hacia atrás.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Baja hasta sentir un estiramiento fuerte en los isquiotibiales (normalmente cuando el torso está casi paralelo al suelo). Mantén la espalda RECTA.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Sube apretando glúteos e isquiotibiales. Empieza con peso MUY LIGERO — este ejercicio requiere buena técnica.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Redondear la espalda — PELIGROSO, mantén espalda neutra siempre</div>
+                            <div class="error-item">Bloquear las rodillas completamente — mantén ligera flexión</div>
+                            <div class="error-item">Usar peso excesivo — domina la técnica primero con peso ligero</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn legs-btn" data-exercise="legs-2">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leg Exercise 3: Leg Extension -->
+            <div class="exercise-card animate-on-scroll" id="card-legs-3">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.48.24 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">03</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Leg Extension</h3>
+                                <span class="exercise-sets legs-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Cuádriceps</span>
+                            <span class="muscle-tag">Recto femoral</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Ajusta la máquina para que el cojín quede justo encima de tus tobillos y la espalda completamente apoyada en el respaldo.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Extiende las piernas completamente y aprieta los cuádriceps FUERTE por 1-2 segundos arriba. Siente la quemada.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Baja controladamente (3-4 segundos). La fase negativa es donde más crecimiento ocurre.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>No agarres los agarraderos demasiado fuerte ni levantes el trasero del asiento. Mantén la tensión solo en los cuádriceps.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Usar impulso para subir — movimiento controlado y lento</div>
+                            <div class="error-item">No extender completamente — busca la contracción máxima</div>
+                            <div class="error-item">Peso excesivo — prioriza sentir el cuádriceps</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn legs-btn" data-exercise="legs-3">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leg Exercise 4: Seated Leg Curl -->
+            <div class="exercise-card animate-on-scroll" id="card-legs-4">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.53.39 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">04</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Seated Leg Curl</h3>
+                                <span class="exercise-sets legs-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Isquiotibiales</span>
+                            <span class="muscle-tag">Bíceps femoral</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Ajusta la máquina: el cojín superior debe quedar sobre tus muslos y el cojín inferior detrás de tus tobillos (por encima del talón).</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Flexiona las rodillas jalando los talones hacia tus glúteos. Aprieta fuerte los isquiotibiales en la contracción máxima.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Regresa el peso controladamente a la posición inicial. Siente el estiramiento pero no hiperextiendas las rodillas.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Mantén la espalda apoyada contra el respaldo durante todo el movimiento. No uses impulso.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Levantar las caderas del asiento — mantente sentado firmemente</div>
+                            <div class="error-item">Soltar el peso rápido — la negativa es clave para crecer</div>
+                            <div class="error-item">Rango parcial — haz el movimiento completo</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn legs-btn" data-exercise="legs-4">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leg Exercise 5: Toe Press -->
+            <div class="exercise-card animate-on-scroll" id="card-legs-5">
+                <div class="card-content">
+                    <div class="video-container">
+                        <video src="WhatsApp Video 2026-07-26 at 7.57.15 PM.mp4" preload="metadata" loop muted playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">05</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Toe Press</h3>
+                                <span class="exercise-sets legs-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Gastrocnemio</span>
+                            <span class="muscle-tag">Sóleo</span>
+                            <span class="muscle-tag">Pantorrillas</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Usa la máquina de leg press. Coloca SOLO las puntas de los pies (la bola del pie) en la parte baja de la plataforma. Talones colgando.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Empuja la plataforma extendiendo los tobillos (como pararte de puntitas). Mantén las piernas casi extendidas — el movimiento es solo en los tobillos.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Aprieta las pantorrillas por 2 segundos arriba. Baja lentamente estirando las pantorrillas al máximo.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Las pantorrillas son un músculo terco — necesitan alto volumen y rango completo de movimiento. No hagas reps parciales.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Rango de movimiento parcial — estira y contrae al máximo</div>
+                            <div class="error-item">Reps demasiado rápidas — mantén cada rep lenta y controlada</div>
+                            <div class="error-item">Poner mucho peso del pie en la plataforma — solo las puntas</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn legs-btn" data-exercise="legs-5">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leg Exercise 6: Romanian Deadlift (NO VIDEO) -->
+            <div class="exercise-card animate-on-scroll" id="card-legs-6">
+                <div class="card-content">
+                    <div class="video-container">
+                        <div class="no-video-placeholder">
+                            <span class="no-video-icon">🎬</span>
+                            <span>Video no disponible</span>
+                            <span style="font-size: 0.75rem; opacity: 0.6;">Revisa las recomendaciones detalladas →</span>
+                        </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="exercise-header">
+                            <span class="exercise-number">06</span>
+                            <div class="exercise-meta">
+                                <h3 class="exercise-name">Romanian Deadlift</h3>
+                                <span class="exercise-sets legs-color">3 × 12-15 reps</span>
+                            </div>
+                        </div>
+                        <div class="exercise-muscles-list">
+                            <span class="muscle-tag">Isquiotibiales</span>
+                            <span class="muscle-tag">Glúteos</span>
+                            <span class="muscle-tag">Espalda baja</span>
+                        </div>
+                        <div class="tips-section">
+                            <div class="tips-title">
+                                <span>💡</span> RECOMENDACIONES
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Párate con los pies al ancho de caderas. Sostén la barra o mancuernas frente a tus muslos con agarre prono (palmas hacia ti).</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Con una ligera flexión en las rodillas (que NO se mueven durante el ejercicio), empuja las caderas hacia ATRÁS. El movimiento es un "hip hinge".</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Baja la barra pegada a tus piernas hasta que sientas un estiramiento intenso en los isquiotibiales (normalmente a la altura de las espinillas). Mantén la espalda RECTA siempre.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>Sube empujando las caderas hacia adelante y apretando los glúteos al final. No hiperextiendas la espalda arriba — solo para derecho.</span>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon legs-color">→</span>
+                                <span>DIFERENCIA con el deadlift convencional: aquí la barra NO toca el suelo y las rodillas casi no se mueven. Todo el movimiento es en las caderas.</span>
+                            </div>
+                        </div>
+                        <div class="errors-section">
+                            <div class="errors-title">⚠️ ERRORES COMUNES</div>
+                            <div class="error-item">Redondear la espalda — el error más peligroso, mantén la espalda neutra</div>
+                            <div class="error-item">Flexionar demasiado las rodillas — se convierte en un squat</div>
+                            <div class="error-item">Alejar la barra del cuerpo — la barra debe "deslizarse" por tus piernas</div>
+                            <div class="error-item">Bajar demasiado — solo hasta donde tu flexibilidad permita sin perder forma</div>
+                        </div>
+                        <div class="exercise-footer">
+                            <button class="complete-btn legs-btn" data-exercise="legs-6">Marcar completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-credit">
+                Rutina basada en el video de <a href="https://www.youtube.com/watch?v=vD-dEl7R2Bg" target="_blank" rel="noopener noreferrer" class="footer-link">Jesse James West</a> en YouTube
+            </p>
+            <p class="footer-love">Hecho con 💪 para los que empiezan su camino en el gym</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
